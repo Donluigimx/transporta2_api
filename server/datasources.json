@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "db",
+    "port": 27017,
+    "url": "",
+    "database": "transporta2",
+    "password": "",
+    "name": "db",
+    "user": "",
+    "connector": "mongodb"
+  }
+}

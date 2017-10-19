@@ -1,0 +1,14 @@
+version: '2'
+services:
+  db:
+    image: mongo:3
+  api:
+    command: node .
+    working_dir: /home/node/app
+    image: node:8
+    volumes:
+      - .:/home/node/app
+    ports:
+      - "8001:3000"
+    depends_on:
+      - db
