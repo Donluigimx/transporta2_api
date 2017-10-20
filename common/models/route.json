@@ -1,0 +1,37 @@
+{
+  "name": "Route",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "origin": {
+      "type": "string",
+      "required": true
+    },
+    "destination": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "buses": {
+      "type": "hasMany",
+      "model": "Bus",
+      "foreignKey": ""
+    },
+    "busStops": {
+      "type": "hasMany",
+      "model": "BusStop",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

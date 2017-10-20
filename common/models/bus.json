@@ -1,0 +1,24 @@
+{
+  "name": "Bus",
+  "plural": "buses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "number": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "route": {
+      "type": "belongsTo",
+      "model": "Route",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

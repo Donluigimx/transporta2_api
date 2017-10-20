@@ -1,0 +1,34 @@
+{
+  "name": "History",
+  "plural": "histories",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "profile": {
+      "type": "belongsTo",
+      "model": "Profile",
+      "foreignKey": ""
+    },
+    "bus": {
+      "type": "belongsTo",
+      "model": "Bus",
+      "foreignKey": ""
+    },
+    "route": {
+      "type": "belongsTo",
+      "model": "Route",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

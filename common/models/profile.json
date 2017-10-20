@@ -6,8 +6,20 @@
     "validateUpsert": true
   },
   "properties": {
-    "birthday": {
+    "birthDate": {
       "type": "date"
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
     }
   },
   "validations": [],

@@ -1,0 +1,23 @@
+{
+  "name": "BusStop",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "point": {
+      "type": "geopoint"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "route": {
+      "type": "belongsTo",
+      "model": "Route",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
