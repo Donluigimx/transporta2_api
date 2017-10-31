@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = (app) => {
+  let RoleMapping = app.models.RoleMapping;
   const Profile = app.models.Profile;
   const Role = app.models.Role;
   Profile.count({
@@ -20,7 +21,7 @@ module.exports = (app) => {
         if (err) throw err;
         console.log('Role created');
         role.principals.create({
-          principalType: 'Profile',
+          principalType: RoleMapping.USER,
           principalId: profile.id,
         }, (err, principal) => {
           if (err) throw err;
