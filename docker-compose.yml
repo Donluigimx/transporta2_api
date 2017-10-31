@@ -12,5 +12,3 @@ services:
       - "8081:3000"
     depends_on:
       - db
-    environment:
-      - DEBUG=loopback:security:role
