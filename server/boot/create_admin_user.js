@@ -13,7 +13,10 @@ module.exports = (app) => {
     Profile.create({
       username: 'admin', password: '11223344', email: 'luigilahi@gmail.com',
     }, (err, profile) => {
-      if (err) throw err;
+      if (err) {
+        console.log(err);
+        return;
+      }
       console.log('Admin user created');
       Role.create({
         name: 'admin',

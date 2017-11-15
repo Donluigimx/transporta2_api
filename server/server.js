@@ -1,7 +1,9 @@
 'use strict';
 
-const loopback = require('loopback');
-const boot = require('loopback-boot');
+const loopback = require('loopback'),
+  boot = require('loopback-boot'),
+  redis = require('redis'),
+  busesActions = require('./sockets/buses');
 
 const app = module.exports = loopback();
 
@@ -25,6 +27,20 @@ boot(app, __dirname, function(err) {
 
   // start the server if `$ node server.js`
   if (require.main === module) {
+    
+    // connect to the redis DB
+    app.redisClient = redis.createClient({
+      host: 'dindb'
+    });
+
+    // start the socket server
     app.io = require('socket.io')(app.start());
+
+    // on every conection, set the busActions listeners
+    app.io.on('connection', function(socket) {
+      console.log('User connected');
+      busesActions.busGet(socket, app);
+      busesActions.busSet(socket, app);
+    });        
   }
 });

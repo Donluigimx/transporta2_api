@@ -12,3 +12,5 @@ services:
       - "8081:3000"
     depends_on:
       - db
+  dindb:
+    image: redis:3
